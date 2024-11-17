@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="감상평 저장소"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_gravity="left"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 화면 스크롤이 가능한 View -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- item이 추가 되는 곳 -->
+            <!-- item 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/item_border"
+                android:gravity="center_vertical">
+
+                <!-- item 이미지 -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/item_border"
+                    android:backgroundTint="#cccccccc"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/itemImage1" />
+
+                <!-- item 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <!-- item 제목 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HarryPotter"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- item 내용 (3줄정도 표기) -->
+                    <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <!-- 별점 -->
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.0"
+                        android:isIndicator="true"
+                        android:theme="@style/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall" />
+
+                    <!-- item 생성 시간 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024.11.10."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10dp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Item 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/item_border"
+                android:gravity="center_vertical">
+
+                <!-- item 이미지 -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/item_border"
+                    android:backgroundTint="#cccccccc"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/itemImage2" />
+
+                <!-- item 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <!-- item 제목 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HarryPotter"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- item 내용 (3줄정도 표기) -->
+                    <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <!-- 별점 -->
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.0"
+                        android:isIndicator="true"
+                        android:theme="@style/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall" />
+
+                    <!-- item 생성 시간 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024.11.10."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10dp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Item 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_marginBottom="6dp"
+                android:id="@+id/item3"
+                android:background="@drawable/item_border"
+                android:gravity="center_vertical">
+
+                <!-- item 이미지 -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/item_border"
+                    android:backgroundTint="#cccccccc"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/itemImage3" />
+
+                <!-- item 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <!-- item 제목 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HarryPotter"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- item 내용 (3줄정도 표기) -->
+                    <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <!-- 별점 -->
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.0"
+                        android:isIndicator="true"
+                        android:theme="@style/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall" />
+
+                    <!-- item 생성 시간 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024.11.10."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10dp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Item 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_marginBottom="6dp"
+                android:id="@+id/item4"
+                android:background="@drawable/item_border"
+                android:gravity="center_vertical">
+
+                <!-- item 이미지 -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/item_border"
+                    android:backgroundTint="#cccccccc"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/itemImage4" />
+
+                <!-- item 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <!-- item 제목 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HarryPotter"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- item 내용 (3줄정도 표기) -->
+                    <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <!-- 별점 -->
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.0"
+                        android:isIndicator="true"
+                        android:theme="@style/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall" />
+
+                    <!-- item 생성 시간 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024.11.10."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10dp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Item 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="6dp"
+                android:layout_marginBottom="6dp"
+                android:id="@+id/item5"
+                android:background="@drawable/item_border"
+                android:gravity="center_vertical">
+
+                <!-- item 이미지 -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/item_border"
+                    android:backgroundTint="#cccccccc"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/itemImage5" />
+
+                <!-- item 정보 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <!-- item 제목 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HarryPotter"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- item 내용 (3줄정도 표기) -->
+                    <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
+                        android:textSize="14sp"
+                        android:textColor="#666666" />
+
+                    <!-- 별점 -->
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.0"
+                        android:isIndicator="true"
+                        android:theme="@style/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall" />
+
+                    <!-- item 생성 시간 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024.11.10."
+                        android:layout_marginTop="3dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="10dp"
+                        android:textColor="#666666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- item 추가 가능 -->
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 고정된 버튼 -->
+    <Button
+        android:id="@+id/floatingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추가하기"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
