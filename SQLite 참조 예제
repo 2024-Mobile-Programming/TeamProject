@@ -1,0 +1,57 @@
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private BookDatabaseHelper dbHelper;
+    private EditText editTextTitle, editTextAuthor;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        dbHelper = new BookDatabaseHelper(this);
+
+        editTextTitle = findViewById(R.id.editTextTitle);
+        editTextAuthor = findViewById(R.id.editTextAuthor);
+        Button buttonSave = findViewById(R.id.buttonSave);
+
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = editTextTitle.getText().toString().trim();
+                String author = editTextAuthor.getText().toString().trim();
+
+                // 다른 필드 데이터도 입력 받을 수 있습니다.
+
+                if (!title.isEmpty() && !author.isEmpty()) {
+                    // 데이터베이스에 데이터 삽입
+                    long id = dbHelper.insertBookReview(
+                            title,       // 책 제목
+                            author,      // 작가 이름
+                            "출판사 예시",  // 출판사 (예시 값)
+                            "옮긴이 예시",  // 옮긴이 (예시 값)
+                            5,           // 별점 (예시 값)
+                            "장르 예시",   // 장르 (예시 값)
+                            "2024-11-18", // 감상평 작성 날짜 (예시 값)
+                            "리뷰 예시",   // 감상평 (예시 값)
+                            "태그 예시"    // 태그 (예시 값)
+                    );
+
+                    if (id != -1) {
+                        Toast.makeText(MainActivity.this, "저장 성공", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "저장 실패", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "모든 필드를 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}
