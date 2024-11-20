@@ -14,6 +14,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp">
 
+        <!-- Toolbar는 기본적으로 LinearLayout처럼 작동하므로 layout_gravity를 사용 -->
         <TextView
             android:id="@+id/toolbarTitle"
             android:layout_width="wrap_content"
@@ -21,8 +22,18 @@
             android:text="감상평 저장소"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:layout_gravity="left"
+            android:layout_gravity="start|center_vertical"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/toGridButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/grid"
+            android:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="end|center_vertical"
+            tools:ignore="UseAppTint" />
     </androidx.appcompat.widget.Toolbar>
 
     <!-- 화면 스크롤이 가능한 View -->
@@ -73,7 +84,10 @@
                         android:text="Avatar"
                         android:textSize="20dp"
                         android:textStyle="bold"
-                        android:id="@+id/author" />
+                        android:id="@+id/author"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
 
                     <!-- 작가 (작가가 존재하지 않으면 gone) -->
                     <TextView
@@ -82,17 +96,22 @@
                         android:text="(작가)"
                         android:textSize="12dp"
                         android:textColor="#666666"
-                        android:visibility="gone"/>
+                        android:visibility="gone"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
                     <!-- item 내용 (3줄정도 표기) -->
                     <TextView
-                        android:layout_width="245dp"
+                        android:layout_width="225dp"
                         android:layout_height="match_parent"
                         android:paddingTop="5dp"
                         android:paddingBottom="10dp"
                         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
                         android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textColor="#666666"
+                        android:ellipsize="end"
+                        android:maxLines="3"/>
 
                     <!-- 별점 -->
                     <RatingBar
@@ -150,7 +169,10 @@
                         android:layout_height="wrap_content"
                         android:text="HarryPotter"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
 
                     <!-- 작가 (작가가 존재하면 visible) -->
                     <TextView
@@ -159,17 +181,22 @@
                         android:text="(작가)"
                         android:textSize="12dp"
                         android:textColor="#666666"
-                        android:visibility="visible"/>
+                        android:visibility="visible"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
 
                     <!-- item 내용 (3줄정도 표기) -->
                     <TextView
-                        android:layout_width="245dp"
+                        android:layout_width="225dp"
                         android:layout_height="match_parent"
                         android:paddingTop="5dp"
                         android:paddingBottom="10dp"
                         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non leo at justo var"
                         android:textSize="14sp"
-                        android:textColor="#666666" />
+                        android:textColor="#666666"
+                        android:ellipsize="end"
+                        android:maxLines="3"/>
 
                     <!-- 별점 -->
                     <RatingBar
