@@ -11,9 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GridMainActivity extends AppCompatActivity {
-    TextView author;
     ImageButton listButton;
 
     @Override
@@ -22,6 +27,28 @@ public class GridMainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.grid_main);
 
+        // RecyclerView 초기화
+        RecyclerView recyclerViewGrid = findViewById(R.id.recyclerViewGrid);
+
+        // GridLayoutManager 설정 (2열 그리드)
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);  // 2열 그리드
+        recyclerViewGrid.setLayoutManager(gridLayoutManager);
+
+        // 데이터 리스트 생성
+        // item 추가 (하드 코딩)
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(new Item("Avatar", "An epic sci-fi movie", null, "2024.11.23.", 0, 4.5f));
+        itemList.add(new Item("Harry Potter", "A magical journey", null, "2024.11.23.", 0, 3.5f));
+        itemList.add(new Item("Inception", "A mind-bending thriller", null, "2024.11.23.", 0, 4.0f));
+        itemList.add(new Item("Avatar", "An epic sci-fi movie", null, "2024.11.23.", 0, 4.5f));
+        itemList.add(new Item("Harry Potter", "A magical journey", null, "2024.11.23.", 0, 3.5f));
+        itemList.add(new Item("Inception", "A mind-bending thriller", null, "2024.11.23.", 0, 4.0f));
+
+        // 어댑터 설정
+        GridItemAdapter adapter = new GridItemAdapter(itemList);
+        recyclerViewGrid.setAdapter(adapter);
+
+        // 리스트뷰로 전환
         listButton = (ImageButton) findViewById(R.id.toListButton);
 
         listButton.setOnClickListener(new View.OnClickListener() {
